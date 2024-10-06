@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Count and Replace</title>
+</head>
+<body>
+<script>
+function countDotsAndReplace(inputString) {
+  const dotCount = inputString.split(' ').reduce((count, word) => {
+    return count + (word.endsWith('.') ? 1 : 0);
+  }, 0);
+  const replacedString = inputString.replace(/ST/g, 'P');
+  document.write(`Вхідний рядок: ${inputString}<br>`);
+  document.write(`Кількість символів '.' перед пробілом: ${dotCount}<br>`);
+  document.write(`Рядок після заміни 'ST' на 'P': ${replacedString}`);
+}
+const exampleString = "This is a test. STackoverflow is a great resource.";
+countDotsAndReplace(exampleString);
+</script>
+</body>
+</html>
